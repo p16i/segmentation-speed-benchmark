@@ -1,0 +1,14 @@
+#! /usr/bin/env python3
+
+import sys
+from deepcut import tokenize
+import utils
+from tqdm import tqdm
+
+filepath = sys.argv[1]
+total = utils.count_lines(filepath)
+with open(filepath, "r") as fin, open(".dummy_output", "w") as fout:
+    with utils.Timer("deepcut", filepath) as t:
+        for l in tqdm(fin, total=total):
+            l = l.strip()
+            fout.write("%s\n" % "|".join(tokenize(l)))

@@ -1,0 +1,13 @@
+#! /usr/bin/env python3
+
+import sys
+from pythainlp.tokenize import word_tokenize
+from utils import Timer
+
+filepath = sys.argv[1]
+
+with open(filepath, "r") as fin, open(".dummy_output", "w") as fout:
+    with Timer("pythainlp", filepath) as t:
+        for l in fin:
+            l = l.strip()
+            fout.write("%s\n" % "|".join(word_tokenize(l)))
