@@ -26,12 +26,13 @@ resource "aws_instance" "tokenization_speed_benchmark" {
     source      = "scripts"
     destination = "scripts"
   }
-    connection {
-        type     = "ssh"
-        user     = "ec2-user"
-        private_key = "${file("~/.ssh/id_aws_rsa")}"
-        host = "${aws_instance.tokenization_speed_benchmark.public_ip}"
-    }
+
+  connection {
+      type     = "ssh"
+      user     = "ec2-user"
+      private_key = "${file("~/.ssh/id_aws_rsa")}"
+      host = "${aws_instance.tokenization_speed_benchmark.public_ip}"
+  }
 }
 output "instance_ip" {
   value = "${aws_instance.tokenization_speed_benchmark.public_ip}"
