@@ -1,12 +1,19 @@
 # Tokenizatin Speed Benchmark
-Utility scripts for benchmarking Thai tokenizers on a cloud server.
+Utility scripts for benchmarking Thai tokenizers on a cloud server. We use `Terraform` to boostrap the server.
 
+## Requirements
+- Terraform CLI
+- AWS CLI
 
-## Terraform
+## Boostraping the testing server
 ```
-1. terraform init
-2. terraform plan -> apply
-3. terraform destroy
+$ terraform plan
+$ terraform apply
+$ terraform destroy
+```
 
-terraform plan -var="instance_type=p2.xlarge"
+## Running benchmarks
+```
+$ chmod +x ./scripts/* # only first time
+$ ./scripts/run-experiments [wisesight.txt|best-val.txt]
 ```
