@@ -14,6 +14,5 @@ $ terraform destroy
 
 ## Running benchmarks
 ```
-$ chmod +x ./scripts/* # only first time
 $ ./scripts/run-experiments [wisesight.txt|best-val.txt]
 ```
