@@ -14,6 +14,7 @@ do
             slug="$d-$m-$i"
             echo "Running $slug"
             python3 "./scripts/$m" $d > .result-$slug
+            echo "sleep" && sleep 2
         done
     done
 done
