@@ -1,5 +1,5 @@
-# Tokenizatin Speed Benchmark
-Utility scripts for benchmarking Thai tokenizers on a cloud server. We use `Terraform` to boostrap the server.
+# Segmentation Speed Benchmark
+Utility scripts for benchmarking Thai segmenters on a cloud server (AWS). We use `Terraform` to boostrap the server.
 
 ## Requirements
 - Terraform CLI
